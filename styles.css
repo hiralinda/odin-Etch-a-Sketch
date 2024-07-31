@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,38 +11,48 @@ body {
 
 .app-container {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+    color: #ff6b6b;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #feca57;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 25px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .btn {
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #4CAF50;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4ecdc4;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #45b7aa;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .color-picker {
@@ -51,15 +61,17 @@ h1 {
 }
 
 .color-picker label {
-    margin-right: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #2d3436;
 }
 
 #color {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -72,7 +84,7 @@ h1 {
 #color::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #999999;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #4ecdc4;
 }
 
 .sketch-container {
@@ -80,13 +92,60 @@ h1 {
     flex-wrap: wrap;
     width: 512px;
     height: 512px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    border: 3px solid #4ecdc4;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 .grid-square {
     box-sizing: border-box;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
+}
+
+#rainbow {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 200% auto;
+    color: white;
+    animation: rainbow 5s linear infinite;
+}
+
+#eraser {
+    background-color: #ff6b6b;
+}
+
+#clear {
+    background-color: #feca57;
+    color: #2d3436;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .sketch-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
 }
