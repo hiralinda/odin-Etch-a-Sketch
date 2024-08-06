@@ -61,4 +61,4 @@ The project uses a custom CSS file (`styles.css`) to implement an attractive and
 This project was inspired by The Odin Project curriculum and enhanced with additional features and a canvas-like design.
 
 ## Live Demo
-[View Live Demo](#)
+[View Live Demo](https://hiralinda.github.io/odin-Etch-a-Sketch/)
